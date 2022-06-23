@@ -20,12 +20,6 @@ public class Redis implements Cache<Jedis> {
         this.jedis = jedisPool.getResource();
     }
 
-    public Redis(Jedis jedis, String password) {
-        this.jedis = jedis;
-        this.jedisPool = jedis;
-        this.password = password;
-    }
-
     @Override
     public boolean connect() {
         if (!isConnected()) {
