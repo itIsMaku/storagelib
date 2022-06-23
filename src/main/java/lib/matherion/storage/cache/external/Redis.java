@@ -22,7 +22,7 @@ public class Redis implements Cache<Jedis> {
 
     public Redis(Jedis jedis, String password) {
         this.jedis = jedis;
-        this.jedisPool = jedis.
+        this.jedisPool = jedis;
         this.password = password;
     }
 
