@@ -4,7 +4,6 @@ import com.github.jasync.sql.db.Connection;
 import com.github.jasync.sql.db.QueryResult;
 import com.github.jasync.sql.db.RowData;
 import lib.matherion.storage.properties.PropertiesBuilder;
-import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,19 +35,6 @@ public class MySQL extends JDBC {
                 (String) propertiesBuilder.get("password"),
                 (boolean) propertiesBuilder.get("ssl"),
                 (boolean) propertiesBuilder.get("autoreconnect")
-        );
-    }
-
-    public MySQL(FileConfiguration fileConfiguration) {
-        this(Objects.requireNonNull(new PropertiesBuilder()
-                .put("address", fileConfiguration.getString("storage.mysql.address"))
-                .put("port", fileConfiguration.getInt("storage.mysql.port"))
-                .put("database", fileConfiguration.getString("storage.mysql.database"))
-                .put("username", fileConfiguration.getString("storage.mysql.username"))
-                .put("password", fileConfiguration.getString("storage.mysql..password"))
-                .put("ssl", fileConfiguration.getBoolean("storage.mysql.ssl"))
-                .put("autoreconnect", fileConfiguration.getBoolean("storage.mysql.autoreconnect")
-                ))
         );
     }
 
